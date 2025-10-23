@@ -14,4 +14,21 @@ body{
     font-size: 30px;
     text-decoration: underline;
 }
-
+.column{
+   display: grid;
+   grid-template-columns: repeat(4, 1fr); 
+}
+.list-Sections{
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    margin: 5px;
+    width: 300px;
+    min-height: 200px;
+}
+.list-Sections h2{
+    font-size: 30px;
+    margin-top: 10px;
+    padding-bottom: 10px;
+    text-decoration: underline;
+}
