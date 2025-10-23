@@ -32,3 +32,7 @@ body{
     padding-bottom: 10px;
     text-decoration: underline;
 }
+.purchased {
+  text-decoration: line-through;
+  color: gray;
+}
