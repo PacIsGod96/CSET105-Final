@@ -22,6 +22,10 @@ function addItem(event) {
         li.addEventListener("click", () => {
         li.classList.toggle("purchased");
         });
+
+        li.addEventListener("dblclick", () => {
+            li.remove();
+        });
         
         items.push(li);
         ul.appendChild(li);

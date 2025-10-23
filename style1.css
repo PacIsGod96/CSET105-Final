@@ -37,8 +37,10 @@ body{
   text-decoration: line-through;
   color: gray;
 }
-
 .header select{
     height: 30px;
     text-decoration: none;
 } 
+.title-Button{
+    padding: 0 20px;
+}
