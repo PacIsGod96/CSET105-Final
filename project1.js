@@ -18,12 +18,12 @@ function addItem(event) {
         li.textContent = itemName;
 
 
-            // Optional: toggle strikethrough on click
+        
         li.addEventListener("click", () => {
         li.classList.toggle("purchased");
         });
         
-        items += itemName;
+        items.push(li);
         ul.appendChild(li);
         ul.appendChild(inputs);
         input.value = "";
@@ -35,16 +35,37 @@ function addItem(event) {
 
 
 
-function filter(){
+function filter(event){
+    
     let value = Number(document.getElementById("filter").value);
 
     console.log(value);
 
     if(value === 1){  
-        for(let i = 0;i<=items.length;i++){
+        for(let i = 0;i< items.length;i++){
+            let item = items[i];
             if(!item.classList.contains("purchased")){
                 items[i].style.visibility = "hidden";
             }
+            else if(item.classList.contains("purchased")){
+                items[i].style.visibility = "visible";  
+            }
+        }
+    }
+    else if(value === 2){  
+        for(let i = 0;i< items.length;i++){
+            let item = items[i];
+            if(item.classList.contains("purchased")){
+                items[i].style.visibility = "hidden";
+            }
+            else if(!item.classList.contains("purchased")){
+                items[i].style.visibility = "visible";  
+            }
+        }
+    }
+    else if(value === 0){
+        for(let i = 0;i< items.length;i++){
+            items[i].style.visibility = "visible";
         }
     }
 }
