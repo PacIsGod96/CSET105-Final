@@ -35,7 +35,8 @@ function addItem(event) {
 
 
 
-function filter(){
+function filter(event){
+    
     let value = Number(document.getElementById("filter").value);
 
     console.log(value);

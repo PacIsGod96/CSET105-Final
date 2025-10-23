@@ -13,6 +13,7 @@ body{
     margin-top: 50px;
     font-size: 30px;
     text-decoration: underline;
+    display: flex;
 }
 .column{
    display: grid;
@@ -36,3 +37,8 @@ body{
   text-decoration: line-through;
   color: gray;
 }
+
+.header select{
+    height: 30px;
+    text-decoration: none;
+} 
