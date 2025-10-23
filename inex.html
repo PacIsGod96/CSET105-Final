@@ -11,7 +11,7 @@
         
         <h1>Grocery List</h1>
 
-       <label>Filters:</label>
+       <label class="options">Filters:</label>
         <select name="filter" id="filter" onchange="filter()">
             <option value="0">None</option>
             <option value="1">Purchased</option>
@@ -57,8 +57,8 @@
                         <input class="item" type="text" placeholder="Type here">
                         <button class="add-To-List" onclick="addItem(event)">click</button>
                     </div>
+                    <ul class="item-list"></ul>
                 </div>
-                <ul class="item-list"></ul>
            </div>
         </div>
         <div class="column">

@@ -12,8 +12,10 @@ body{
 .header{
     margin-top: 50px;
     font-size: 30px;
-    text-decoration: underline;
     display: flex;
+}
+.header h1{
+    text-decoration: underline;
 }
 .column{
    display: grid;
@@ -37,8 +39,15 @@ body{
   text-decoration: line-through;
   color: gray;
 }
-
-.header select{
+.options{
+    margin-top: 20px;
+    margin-left: 20px;
+}
+#filter{
     height: 30px;
-    text-decoration: none;
-} 
+    margin-top: 24px;
+    margin-left: 10px;
+}
+.item-list{
+    cursor: default;
+}
