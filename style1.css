@@ -44,6 +44,11 @@ body{
     height: 30px;
     text-decoration: none;
 } 
+.header a{
+    padding-left: 30px;
+    padding-top: 20px;
+    color: black;
+}
 .title-Button{
     padding: 0 20px;
 }
