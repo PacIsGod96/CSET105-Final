@@ -33,10 +33,11 @@ body {
     padding: 30px;
 }
 .quizBody{
-    height: 200px;
+    height: 100%;
     width: 100%;
     display: flex;
     justify-content: center;
+    padding-bottom: 30px;
 }
 .answers{
     width: 300px;
@@ -53,8 +54,23 @@ body {
 .answers h2{
     padding: 20px;
 }
-
-
-
-
-
+label {
+    font-weight: bold;
+    display: flex;
+}
+label p{
+    padding-left: 7px;
+}
+.quizFooter{
+    height: 100%;
+}
+.quizFooter button{
+    height: 50px;
+    width: 100px;
+    font-weight: bold;
+    border-radius: 20px;
+    background: linear-gradient(to right, purple, blue);
+    color: white;
+    border-color: white;
+    border: 2px solid;
+}
