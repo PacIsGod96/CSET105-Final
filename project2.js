@@ -54,6 +54,10 @@ let quiz = [
 let questionNum = 0
 let score = 0
 
+function start(){
+    
+}
+
 function questions(){
     let qn = quiz[questionNum]
     document.querySelector(`.quizHeader h2`).textContent = qn.question
