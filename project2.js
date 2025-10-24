@@ -50,3 +50,36 @@ let quiz = [
         answer: `CSET`
     }
 ]
+
+let questionNum = 0
+let score = 0
+
+function start(){
+    
+}
+
+function questions(){
+    let qn = quiz[questionNum]
+    document.querySelector(`.quizHeader h2`).textContent = qn.question
+    let mcOptions = document.querySelector(`.answers p`)
+    mcOptions.innerHTML = ``
+
+    for(let i = 0; i < qn.options.length; i++){
+        let label = document.createElement(`label`)
+        label.classList.add(`options`)
+        label.innerHTML = `<input type="radio" name="quiz" value="${option}" ${option}`
+        mcOptions.appendChild(label)
+    }
+}
+
+function submit(){
+    let selected = document.querySelector(`input[name="quiz"]:checked`)
+    if(selected.value = quiz[questionNum].answer){
+        score++
+        let optDiv = selected.closest(`.answers`)
+        optDiv.style.borderColor = `green`
+    }else{
+        let optDiv = selected.closest(`.answers`)
+        optDiv.style.borderColor = `green`
+    }
+}
