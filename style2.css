@@ -2,21 +2,31 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+    letter-spacing: 1px;
 }
 body {
     background-color: black;
 }
-.header{
+.header {
+    background: linear-gradient(to right, purple, blue); 
+    padding: 20px;
+    border-radius: 20px;
+    border: 2px solid white;
     text-align: center;
     color: white;
-    padding: 20px;
+    margin-bottom: 20px;
+}
+.header h2 {
+    font-size: 30px;
+    text-transform: uppercase;
 }
 .body{  
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding-top: 50px;
 }
 .quizHeader {
     height: 100px;
@@ -25,12 +35,14 @@ body {
     border-radius: 20px;
     background: linear-gradient(to right, purple, blue);
     color: white;
-    margin-bottom: 100px;
-    border-color: white;
-    border: 2px solid;
+    margin-bottom: 50px;
+    border: 2px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .quizHeader h2{
-    padding: 30px;
+    padding: 20px;
 }
 .quizBody{
     height: 100%;
@@ -46,10 +58,9 @@ body {
     margin: 50px;
     display: flex;
     align-items: center;
-    background: linear-gradient(to right, purple, blue) border-box;
+    background: linear-gradient(to right, purple, blue);
     color: white;
-    border-color: white;
-    border: 2px solid;
+    border: 2px solid white;
 }
 .answers h2{
     padding: 20px;
@@ -71,6 +82,7 @@ label p{
     border-radius: 20px;
     background: linear-gradient(to right, purple, blue);
     color: white;
-    border-color: white;
-    border: 2px solid;
+    border: 2px solid white;
 }
+
+
