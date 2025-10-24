@@ -27,6 +27,7 @@ body {
     justify-content: center;
     align-items: center;
     padding-top: 50px;
+    visibility: hidden;
 }
 .quizHeader {
     height: 100px;
@@ -84,5 +85,18 @@ label p{
     color: white;
     border: 2px solid white;
 }
-
-
+.start{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    visibility: visible;
+}
+.start button{
+    height: 50px;
+    width: 100px;
+    font-weight: bold;
+    border-radius: 20px;
+    background: linear-gradient(to right, purple, blue);
+    color: white;
+    border: 2px solid white;
+}
