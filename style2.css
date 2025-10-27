@@ -12,7 +12,7 @@ body {
     background: linear-gradient(to right, purple, blue); 
     padding: 20px;
     border-radius: 20px;
-    border: 2px solid white;
+    border: 3.5px solid white;
     text-align: center;
     color: white;
     margin-bottom: 20px;
@@ -30,6 +30,7 @@ body {
 }
 .back{
     color: white;
+    margin-left: 50px;
 }
 .quizHeader {
     height: 100px;
@@ -39,13 +40,24 @@ body {
     background: linear-gradient(to right, purple, blue);
     color: white;
     margin-bottom: 50px;
-    border: 2px solid white;
+    border: 3.5px solid white;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .quizHeader h2{
     padding: 20px;
+}
+.backAndTimer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.timer{
+    color: white;
+    font-size: 50px;
+    margin-right: 50px;
+    display: none;
 }
 .quizBody{
     height: 100%;
@@ -63,7 +75,7 @@ body {
     align-items: center;
     background: linear-gradient(to right, purple, blue);
     color: white;
-    border: 2px solid white;
+    border: 3.5px solid white;
 }
 .answers h2{
     padding: 20px;
@@ -87,7 +99,7 @@ label p{
     border-radius: 20px;
     background: linear-gradient(to right, purple, blue);
     color: white;
-    border: 2px solid white;
+    border: 3.5px solid white;
 }
 .start{
     display: flex;
@@ -101,7 +113,7 @@ label p{
     border-radius: 20px;
     background: linear-gradient(to right, purple, blue);
     color: white;
-    border: 2px solid white;
+    border: 3.5px solid white;
 }
 .next{
     display: none;
@@ -133,5 +145,5 @@ label p{
     border-radius: 20px;
     background: linear-gradient(to right, purple, blue);
     color: white;
-    border: 2px solid white;
+    border: 3.5px solid white;
 }
