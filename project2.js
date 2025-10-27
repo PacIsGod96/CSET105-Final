@@ -53,6 +53,27 @@ let quiz = [
 
 let questionNum = 0
 let score = 0
+let timer = document.getElementsByClassName(`timer`)[0]
+let seconds = 0
+let timerInterval
+
+function updateTimer(){
+    seconds++
+    let mins = String(Math.floor((seconds % 3600) / 60)).padStart(2, `0`)
+    let secs = String(seconds % 60).padStart(2, `0`)
+    timer.textContent = `${mins}:${secs}`
+}
+
+function startTimer(){
+    if(!timerInterval){
+        timerInterval = setInterval(updateTimer, 1000)
+    }
+}
+
+function stopTimer(){
+    clearInterval(timerInterval)
+    timerInterval = null
+}
 
 function start(){
     let startBtn = document.getElementsByClassName(`srtBtn`)[0]
@@ -60,12 +81,18 @@ function start(){
     document.querySelector(`.body`).style.display = `flex`
     document.querySelector(`.quizFooter`).style.display = `flex`
     document.querySelector(`.back`).style.display = `none`
+    document.querySelector(`.timer`).style.display = `block`
+    
+    seconds = 0
+    timer.textContent = `00:00`
+    stopTimer()
+    startTimer()
     questions()
 }
 
 function questions(){
     let qn = quiz[questionNum]
-    document.querySelector(`.quizHeader h2`).textContent = qn.question
+    document.querySelector(`.quizHeader h2`).textContent = `${questionNum + 1}. ${qn.question}`
 
     let answers = document.querySelectorAll(`.answers`)
 
@@ -126,6 +153,8 @@ function nextQuestion(){
        document.querySelector(`.endDiv`).style.display = `flex`
        let scoreText = document.querySelectorAll(`.score`)[0]
        scoreText.textContent = `${score}/10`
+       document.querySelector(`.timer`).style.display = `none`
+       stopTimer()
     }
 }
 
@@ -137,4 +166,5 @@ function retake(){
     document.querySelector(`.quizFooter`).style.display = `none`
     document.querySelector(`.endDiv`).style.display = `none`
     document.querySelector(`.back`).style.display = `block`
+    document.querySelector(`.timer`).style.display = `none`
 }
