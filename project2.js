@@ -91,7 +91,7 @@ function submit(){
     if(selected.value == correctAnswer){
         score++
         let optDiv = selected.closest(`.answers`)
-        optDiv.style.borderColor = `green`
+        optDiv.style.borderColor = `#39FF14`
     }else{
         let optDiv = selected.closest(`.answers`)
         optDiv.style.borderColor = `red`
@@ -100,7 +100,7 @@ function submit(){
             let input = rightQuestion[x]
             let text = input.parentElement.textContent
             if(text == correctAnswer){
-                input.closest(`.answers`).style.borderColor = `green`
+                input.closest(`.answers`).style.borderColor = `#39FF14`
             }
         }
     }
