@@ -57,8 +57,8 @@ let score = 0
 function start(){
     let startBtn = document.getElementsByClassName(`srtBtn`)[0]
     startBtn.style.display = `none`
-    let body = document.getElementsByClassName(`body`)[0]
-    body.style.visibility = `visible`
+    document.querySelector(`.body`).style.display = `flex`
+    document.querySelector(`.back`).style.display = `none`
     questions()
 }
 
@@ -83,6 +83,7 @@ function submitBtnUnlock(){
     document.querySelector(`.submit`).disabled = false
 }
 function submit(){
+    document.querySelector(`.submit`).style.display = `none`
     let selected = document.querySelector(`input[name="quiz"]:checked`)
     let nextBtn = document.getElementsByClassName(`next`)[0]
     nextBtn.style.display = `block`
@@ -106,6 +107,7 @@ function submit(){
 }
  
 function nextQuestion(){
+    document.querySelector(`.submit`).style.display = `block`
     questionNum++
     if(questionNum < quiz.length){
         questions()
@@ -121,8 +123,9 @@ function nextQuestion(){
 function retake(){
     questionNum = 0
     score = 0
-    document.querySelector(`.body`).style.display = `flex`
-    document.querySelector(`.quizFooter`).style.display = `flex`
+    document.querySelector(`.srtBtn`).style.display = `block`
+    document.querySelector(`.body`).style.display = `none`
+    document.querySelector(`.quizFooter`).style.display = `none`
     document.querySelector(`.endDiv`).style.display = `none`
-    start()
+    document.querySelector(`.back`).style.display = `block`
 }
