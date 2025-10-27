@@ -82,7 +82,7 @@ function start(){
     document.querySelector(`.quizFooter`).style.display = `flex`
     document.querySelector(`.back`).style.display = `none`
     document.querySelector(`.timer`).style.display = `block`
-    
+    document.querySelector(`.backAndTimer`).style.justifyContent = `flex-end`
     seconds = 0
     timer.textContent = `00:00`
     stopTimer()
@@ -154,6 +154,9 @@ function nextQuestion(){
        let scoreText = document.querySelectorAll(`.score`)[0]
        scoreText.textContent = `${score}/10`
        document.querySelector(`.timer`).style.display = `none`
+       let finalTime = document.getElementsByClassName(`timer`)[0].textContent
+       let finalTimeContainer = document.getElementsByClassName(`finalTimeDisplay`)[0]
+       finalTimeContainer.textContent = finalTime
        stopTimer()
     }
 }
@@ -167,4 +170,5 @@ function retake(){
     document.querySelector(`.endDiv`).style.display = `none`
     document.querySelector(`.back`).style.display = `block`
     document.querySelector(`.timer`).style.display = `none`
+    document.querySelector(`.backAndTimer`).style.justifyContent = `space-between`
 }
