@@ -37,7 +37,7 @@ let quiz = [
     {
         question: `What is the element that has the symbol K?`,
         options: [`Gold`, `Krypton`, `Magnesium`, `Potassium`],
-        answer: `potassium`
+        answer: `Potassium`
     },
     {
         question: `Where are the Manitou Springs Steps?`,
@@ -55,31 +55,74 @@ let questionNum = 0
 let score = 0
 
 function start(){
-    
+    let startBtn = document.getElementsByClassName(`srtBtn`)[0]
+    startBtn.style.display = `none`
+    let body = document.getElementsByClassName(`body`)[0]
+    body.style.visibility = `visible`
+    questions()
 }
 
 function questions(){
     let qn = quiz[questionNum]
     document.querySelector(`.quizHeader h2`).textContent = qn.question
-    let mcOptions = document.querySelector(`.answers p`)
-    mcOptions.innerHTML = ``
+
+    let answers = document.querySelectorAll(`.answers`)
 
     for(let i = 0; i < qn.options.length; i++){
-        let label = document.createElement(`label`)
-        label.classList.add(`options`)
-        label.innerHTML = `<input type="radio" name="quiz" value="${option}" ${option}`
-        mcOptions.appendChild(label)
+        let input = answers[i].querySelector(`input`)
+        let text = answers[i].querySelector(`p`)
+        input.value = qn.options[i]
+        text.textContent = qn.options[i]
+        answers[i].style.borderColor = ``
+        input.checked = false
     }
+    document.querySelector(`.submit`).disabled = true
+    document.querySelector(`.next`).style.display = `none`
 }
-
+function submitBtnUnlock(){
+    document.querySelector(`.submit`).disabled = false
+}
 function submit(){
     let selected = document.querySelector(`input[name="quiz"]:checked`)
-    if(selected.value = quiz[questionNum].answer){
+    let nextBtn = document.getElementsByClassName(`next`)[0]
+    nextBtn.style.display = `block`
+    let correctAnswer = quiz[questionNum].answer
+    if(selected.value == correctAnswer){
         score++
         let optDiv = selected.closest(`.answers`)
         optDiv.style.borderColor = `green`
     }else{
         let optDiv = selected.closest(`.answers`)
-        optDiv.style.borderColor = `green`
+        optDiv.style.borderColor = `red`
+        let rightQuestion = document.querySelectorAll(`input[name="quiz"]`)
+        for(let x = 0; x < rightQuestion.length; x++){
+            let input = rightQuestion[x]
+            let text = input.parentElement.textContent
+            if(text == correctAnswer){
+                input.closest(`.answers`).style.borderColor = `green`
+            }
+        }
     }
+}
+ 
+function nextQuestion(){
+    questionNum++
+    if(questionNum < quiz.length){
+        questions()
+    }else{
+       document.querySelector(`.body`).style.display = `none`
+       document.querySelector(`.quizFooter`).style.display = `none`
+       document.querySelector(`.endDiv`).style.display = `flex`
+       let scoreText = document.querySelectorAll(`.score`)[0]
+       scoreText.textContent = `${score}/10`
+    }
+}
+
+function retake(){
+    questionNum = 0
+    score = 0
+    document.querySelector(`.body`).style.display = `flex`
+    document.querySelector(`.quizFooter`).style.display = `flex`
+    document.querySelector(`.endDiv`).style.display = `none`
+    start()
 }
