@@ -58,6 +58,7 @@ function start(){
     let startBtn = document.getElementsByClassName(`srtBtn`)[0]
     startBtn.style.display = `none`
     document.querySelector(`.body`).style.display = `flex`
+    document.querySelector(`.quizFooter`).style.display = `flex`
     document.querySelector(`.back`).style.display = `none`
     questions()
 }
@@ -83,6 +84,7 @@ function submitBtnUnlock(){
     document.querySelector(`.submit`).disabled = false
 }
 function submit(){
+
     document.querySelector(`.submit`).style.display = `none`
     let selected = document.querySelector(`input[name="quiz"]:checked`)
     let nextBtn = document.getElementsByClassName(`next`)[0]
@@ -99,14 +101,21 @@ function submit(){
         for(let x = 0; x < rightQuestion.length; x++){
             let input = rightQuestion[x]
             let text = input.parentElement.textContent
-            if(text == correctAnswer){
+            if(input.value == correctAnswer){
                 input.closest(`.answers`).style.borderColor = `#39FF14`
             }
         }
     }
+
+    document.querySelectorAll('input[name="quiz"]').forEach(input => {
+        input.disabled = true
+    })
 }
  
 function nextQuestion(){
+    document.querySelectorAll('input[name="quiz"]').forEach(input => {
+        input.disabled = false
+    })
     document.querySelector(`.submit`).style.display = `block`
     questionNum++
     if(questionNum < quiz.length){
