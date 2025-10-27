@@ -101,7 +101,7 @@ function submit(){
         for(let x = 0; x < rightQuestion.length; x++){
             let input = rightQuestion[x]
             let text = input.parentElement.textContent
-            if(text == correctAnswer){
+            if(input.value == correctAnswer){
                 input.closest(`.answers`).style.borderColor = `#39FF14`
             }
         }
