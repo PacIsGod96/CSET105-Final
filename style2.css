@@ -135,7 +135,7 @@ label p{
     padding-top: 60px;
     color: white;
     font-size: 50px;
-    gap: 70px;
+    gap: 60px;
 }
 .endBody button{
     height: 80px;
@@ -145,4 +145,7 @@ label p{
     background: linear-gradient(to right, purple, blue);
     color: white;
     border: 3.5px solid white;
+}
+.finalTimeDisplay{
+    font-size: 50px;
 }
