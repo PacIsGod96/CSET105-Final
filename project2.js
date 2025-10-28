@@ -66,7 +66,7 @@ function updateTimer(){ //a function to update the timer
 
 function startTimer(){ //a function that will start the timer 
     if(!timerInterval){ //test if the timer isnt already running 
-
+        timerInterval = setInterval(updateTimer, 1000); //updates the timer interval, every 1000 mili seconds 
     }
 }
 
@@ -100,6 +100,7 @@ function questions(){ //function to grab the question, options, and answers
         let input = answers[i].querySelector(`input`); //a variable that will grab the current answer class and grab the input in that class
         let text = answers[i].querySelector(`p`); //a variable that will grab the current answer class and grab the p tag in that class
         text.textContent = qn.options[i]; //will make the p tag text the option 
+        input.value = qn.options[i]; //sets input value correctly
         answers[i].style.borderColor = ``; //will set the border color of the current answer div to nothing
         input.checked = false; //will make sure that the current input is unchecked 
     }
@@ -134,6 +135,7 @@ function submit(){ //funation for when the submit button is pressed
     for(let i = 0; i < inputs.length; i++){ //a for loop that goes through each input 
         inputs[i].disabled = true; //will disable each input 
     }
+    nextBtn.style.display = `block`; //displays the next button
 }
  
 function nextQuestion(){ //a function that will got to the next question 
@@ -161,7 +163,9 @@ function nextQuestion(){ //a function that will got to the next question
 
 function retake(){ //a function for when the retake button is pressed
     questionNum = 0; //resets the questionNum variable to 0
-    score = 0; //resets the score variable yo 0
+    score = 0; //resets the score variable to 0
+    seconds = 0; //resets the timer to 0
+    timer.textContent = "00:00"
     document.querySelector(`.srtBtn`).style.display = `block`; //sets the start button display to block so it reapears 
     document.querySelector(`.body`).style.display = `none`; //sets the body class display to none so it disappears 
     document.querySelector(`.quizFooter`).style.display = `none`; //sets the quiz footer class display to none so it disappears 
@@ -169,4 +173,5 @@ function retake(){ //a function for when the retake button is pressed
     document.querySelector(`.back`).style.display = `block`; //sets the back class to block so it reapears 
     document.querySelector(`.timer`).style.display = `none`; //sets the timer display to none so it disappears
     document.querySelector(`.backAndTimer`).style.justifyContent = `space-between`; //sets the back and timer to space between so that the a tag and the timer are on opposite sides
+    stopTimer()
 }
